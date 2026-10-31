@@ -1,0 +1,19 @@
+# Сборка .ygplugin в GitHub Actions: NDK уже есть на ubuntu-раннере, ничего ставить не нужно.
+# Залей проект в репозиторий -> вкладка Actions -> Build ygplugin -> артефакт fluidsynth.ygplugin.
+name: Build ygplugin
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y ninja-build zip
+      - name: Build (arm64-v8a + armeabi-v7a)
+        run: ANDROID_NDK_HOME="${ANDROID_NDK_LATEST_HOME:-$ANDROID_NDK_HOME}" ./build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fluidsynth.ygplugin
+          path: out/fluidsynth.ygplugin

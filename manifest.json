@@ -1,0 +1,53 @@
+{
+  "id": "com.yougram.fluidsynth",
+  "name": "FluidSynth",
+  "version": "1.0.0",
+  "api": "2.1",
+  "author": "yougram-fluidsynth",
+  "description": "Рендер MIDI в WAV настоящим движком FluidSynth прямо в чате: /fs render, свои SoundFont-ы (.sf2/.dls), смена инструментов, реверб/хорус/лимитер. Результат приходит файлом в чат.",
+  "entry": "libyg_fluidsynth.so",
+  "priority": 0,
+  "permissions": ["chat.read", "chat.send", "chat.modify", "network", "hooks", "ui"],
+  "settings": [
+    {"key": "gain", "type": "text", "title": "Усиление (gain, 0–10)", "default": "1.0"},
+    {"key": "rate", "type": "choice", "title": "Частота дискретизации", "default": "44100",
+     "options": [
+       {"value": "22050", "title": "22050 Гц (маленький файл)"},
+       {"value": "32000", "title": "32000 Гц"},
+       {"value": "44100", "title": "44100 Гц"},
+       {"value": "48000", "title": "48000 Гц"},
+       {"value": "96000", "title": "96000 Гц"}]},
+    {"key": "bits", "type": "choice", "title": "Разрядность WAV", "default": "16",
+     "options": [
+       {"value": "16", "title": "16 бит"},
+       {"value": "24", "title": "24 бита"},
+       {"value": "32", "title": "32 бита float"}]},
+    {"key": "mono", "type": "switch", "title": "Моно", "default": false},
+    {"key": "reverb", "type": "switch", "title": "Реверберация", "default": true},
+    {"key": "engine", "type": "choice", "title": "Движок реверберации", "default": "dat",
+     "options": [
+       {"value": "dat", "title": "dat (по умолчанию)"},
+       {"value": "fdn", "title": "fdn"},
+       {"value": "free", "title": "freeverb"},
+       {"value": "lex", "title": "lexverb"},
+       {"value": "smith", "title": "signalsmith"}]},
+    {"key": "chorus", "type": "switch", "title": "Хорус", "default": true},
+    {"key": "limiter", "type": "switch", "title": "Лимитер (против клиппинга)", "default": true},
+    {"key": "interp", "type": "choice", "title": "Интерполяция", "default": "4",
+     "options": [
+       {"value": "0", "title": "0 — без (быстро)"},
+       {"value": "1", "title": "1 — линейная"},
+       {"value": "4", "title": "4 — 4-го порядка"},
+       {"value": "7", "title": "7 — 7-го порядка (качество)"}]},
+    {"key": "poly", "type": "number", "title": "Полифония (голосов)", "default": 256, "min": 16, "max": 2048},
+    {"key": "speed", "type": "text", "title": "Темп ×(0.1–4)", "default": "1.0"},
+    {"key": "bank", "type": "choice", "title": "Режим bank select", "default": "gs",
+     "options": [
+       {"value": "gs", "title": "GS"},
+       {"value": "gm", "title": "GM"},
+       {"value": "xg", "title": "XG"},
+       {"value": "mma", "title": "MMA"}]},
+    {"key": "tail", "type": "number", "title": "Макс. хвост после конца MIDI (с)", "default": 4, "min": 0, "max": 30},
+    {"key": "maxmin", "type": "number", "title": "Макс. длина рендера (мин)", "default": 15, "min": 1, "max": 60}
+  ]
+}
