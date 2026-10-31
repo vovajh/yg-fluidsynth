@@ -95,6 +95,13 @@ static char* hostCall(void*, const char* method, const char* args) {
             case 3: media = "{\"type\":\"document\",\"file_name\":\"remote.mid\",\"url\":\"http://test/remote.mid\"}"; break;
             case 4: media = "{\"type\":\"document\",\"file_id\":\"ABC123\",\"size\":1234}"; break;
             case 5: media = "{\"type\":\"document\",\"file_name\":\"long song.mid\",\"local_path\":\"" + g_long + "\"}"; break;
+            case 6: {  // нет ключа "media": вложение под чужим ключом, пути с экранированными слэшами
+                std::string esc;
+                for (char c : g_midi) { if (c == '/') esc += "\\/"; else esc += c; }
+                return dup("{\"ok\":true,\"result\":{\"id\":6,\"chat_id\":100,\"type\":\"document\",\"attachment\":{\"name\":\"odd.mid\",\"uri\":\"" + esc + "\"}}}");
+            }
+            case 7:  // совсем без вложения
+                return dup("{\"ok\":true,\"result\":{\"id\":7,\"chat_id\":100,\"type\":\"text\",\"text\":\"hi\"}}");
             default: return dup("{\"ok\":false,\"error\":\"not found\"}");
         }
         return dup("{\"ok\":true,\"result\":{\"id\":" + std::to_string(id) + ",\"chat_id\":100,\"text\":\"\",\"media\":" + media + "}}");
@@ -163,6 +170,8 @@ int main(int argc, char** argv) {
     cmd("help");
     cmd("info", 1);
     cmd("info", 4);
+    cmd("render", 6);                 pump(60);   // вложение под нестандартным ключом
+    cmd("render", 7);                              // нет вложения: должен прийти сырой JSON
     cmd("render", 1);                 pump(60);
     cmd("render -b 24 -r 48000 -g 0.8 --no-chorus -m", 1); pump(60);
     cmd("render -b 32", 1);           pump(60);

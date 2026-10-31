@@ -635,6 +635,52 @@ bool extractFrom(const char* json, Media& m, bool allowUrl) {
     return m.path[0] || m.url[0];
 }
 
+
+// Последний шанс: перебрать ВСЕ строковые значения JSON сообщения. Берём существующий файл на диске
+// (путь вида /…/файл) или http-ссылку; имя — строка с расширением .sf2/.mid и т.п.
+bool hasKnownExt(const char* n) {
+    return hasExt(n, ".sf2") || hasExt(n, ".sf3") || hasExt(n, ".dls") || hasExt(n, ".mid") || hasExt(n, ".midi") ||
+           hasExt(n, ".kar") || hasExt(n, ".rmi");
+}
+
+bool scanAnyStrings(const char* json, Media& m) {
+    const char* p = json;
+    while (*p) {
+        if (*p != '"') { p++; continue; }
+        const char* st = p + 1;
+        const char* e = st;
+        while (*e && *e != '"') e += (*e == '\\' && e[1]) ? 2 : 1;
+        const char* q = e + 1;
+        while (*q == ' ') q++;
+        bool isKey = (*q == ':');
+        size_t n = (size_t) (e - st);
+        if (!isKey && n > 3 && n < 1000) {
+            char buf[1024];
+            size_t j = 0;
+            for (const char* c = st; c < e && j + 1 < sizeof(buf); c++) {
+                if (*c == '\\' && c + 1 < e) c++;  // \/ -> /, \\ -> \ (достаточно для путей)
+                buf[j++] = *c;
+            }
+            buf[j] = 0;
+            const char* path = !strncmp(buf, "file://", 7) ? buf + 7 : buf;
+            if (path[0] == '/' && strchr(path + 1, '/') && !m.path[0]) {
+                struct stat sb;
+                if (stat(path, &sb) == 0 && S_ISREG(sb.st_mode) && access(path, R_OK) == 0) snprintf(m.path, sizeof(m.path), "%s", path);
+            } else if (!strncmp(buf, "http", 4) && !m.url[0]) {
+                snprintf(m.url, sizeof(m.url), "%s", buf);
+            } else if (!strchr(buf, '/') && hasKnownExt(buf) && !m.name[0]) {
+                snprintf(m.name, sizeof(m.name), "%.120s", buf);
+            }
+        }
+        p = *e ? e + 1 : e;
+    }
+    if (m.path[0] && !m.name[0]) {
+        const char* b = strrchr(m.path, '/');
+        snprintf(m.name, sizeof(m.name), "%.120s", b ? b + 1 : m.path);
+    }
+    return m.path[0] || m.url[0];
+}
+
 // Ищет файл в JSON сообщения: сначала в "media", потом в "content", потом пути по всему сообщению.
 bool extractMedia(const char* msg, Media& m, char* dbg, size_t dbgCap) {
     memset(&m, 0, sizeof(m));
@@ -654,6 +700,7 @@ bool extractMedia(const char* msg, Media& m, char* dbg, size_t dbgCap) {
         free(content);
     }
     if (!found) found = extractFrom(msg, m, false);
+    if (!found) found = scanAnyStrings(msg, m);
     return found;
 }
 
@@ -728,9 +775,7 @@ bool loadMessage(long long chat, long long id, Media& m, char* err, size_t ecap,
     }
     bool ok = extractMedia(r, m, dbg, dcap);
     if (!ok) {
-        char* mm = valueCopy(r, "media");
-        snprintf(err, ecap, "в сообщении не нашёл файл. media: %.260s", mm ? mm : "(нет поля)");
-        free(mm);
+        snprintf(err, ecap, "в сообщении не нашёл файл. Ответ get_message (пришли мне этот текст):\n%.1150s", r);
     }
     yg_free(g_host, r);
     return ok;
@@ -1174,7 +1219,7 @@ void cmdSf(long long chat, long long replyTo, const Toks& k) {
     if (!strcmp(sub, "list") || !strcmp(sub, "fonts")) { cmdSfList(chat); return; }
 
     if (!strcmp(sub, "add") || !strcmp(sub, "load")) {
-        char err[300];
+        char err[1400];
         Input in;
         const char* url = (k.n > 2 && !strncmp(k.t[2], "http", 4)) ? k.t[2] : nullptr;
         if (!obtainInput(chat, replyTo, url, kWantSf, in, err, sizeof(err))) { sendMsg(chat, err); return; }
@@ -1405,7 +1450,7 @@ void cmdRender(long long chat, long long replyTo, const Toks& k, int argFrom, co
     Cfg cfg;
     loadCfg(cfg);
     RenderOpts o;
-    char err[320];
+    char err[1400];
     if (!parseRenderArgs(k, argFrom, cfg, o, err, sizeof(err))) { Out m; m.add("❌ %s", err); sendMsg(chat, m.b); return; }
 
     Input in;
@@ -1459,7 +1504,7 @@ void cmdRender(long long chat, long long replyTo, const Toks& k, int argFrom, co
 void cmdInfo(long long chat, long long replyTo) {
     Out o;
     Media m;
-    char err[300], dbg[420] = "";
+    char err[1400], dbg[420] = "";
     bool got = false;
     if (replyTo > 0) got = loadMessage(chat, replyTo, m, err, sizeof(err), dbg, sizeof(dbg));
     else {
@@ -1531,7 +1576,7 @@ void onCommand(const char* json) {
 
     // Без подкоманды: если есть файл — делаем очевидное (MIDI -> рендер, SoundFont -> добавить).
     if (!k.n && (replyTo > 0 || g_seenN > 0)) {
-        char err[300];
+        char err[1400];
         Input in;
         if (obtainInput(chat, replyTo, nullptr, kWantAny, in, err, sizeof(err))) {
             if (in.kind == kMidi) { Toks none; none.n = 0; cmdRender(chat, replyTo, none, 0, &in); return; }
