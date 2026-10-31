@@ -359,7 +359,7 @@ namespace stfx {
 				_mm_setcsr(controlStatusRegister);
 			}
 		};
-#elif (defined (__ARM_NEON) || defined (__ARM_NEON__))
+#elif (defined (__ARM_NEON) || defined (__ARM_NEON__)) && defined (__aarch64__)
 		class StopDenormals {
 			uintptr_t status;
 		public:
