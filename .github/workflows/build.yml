@@ -1,9 +1,12 @@
 # Сборка .ygplugin в GitHub Actions: NDK уже есть на ubuntu-раннере, ничего ставить не нужно.
-# Залей проект в репозиторий -> вкладка Actions -> Build ygplugin -> артефакт fluidsynth.ygplugin.
+# Результат: артефакт fluidsynth.ygplugin + релиз (Releases) с тем же файлом. Лог сборки — в ветке buildlog.
 name: Build ygplugin
 on:
   push:
+    branches: [main]
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -12,8 +15,22 @@ jobs:
       - name: Install tools
         run: sudo apt-get update && sudo apt-get install -y ninja-build zip
       - name: Build (arm64-v8a + armeabi-v7a)
-        run: ANDROID_NDK_HOME="${ANDROID_NDK_LATEST_HOME:-$ANDROID_NDK_HOME}" ./build.sh
+        run: |
+          NDK="${ANDROID_NDK_LATEST_HOME:-$ANDROID_NDK_HOME}"
+          echo "NDK=$NDK"; cmake --version | head -1
+          ANDROID_NDK_HOME="$NDK" ./build.sh 2>&1 | tee build.log
+      - name: Publish build log
+        if: always()
+        run: |
+          mkdir -p /tmp/lg && cp build.log /tmp/lg/ 2>/dev/null || echo "no log" > /tmp/lg/build.log
+          cd /tmp/lg && git init -q -b buildlog && git config user.name ci && git config user.email ci@example.com
+          git add -A && git commit -qm "build log run ${{ github.run_number }}"
+          git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" buildlog
       - uses: actions/upload-artifact@v4
         with:
           name: fluidsynth.ygplugin
           path: out/fluidsynth.ygplugin
+      - name: Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "build-${{ github.run_number }}" out/fluidsynth.ygplugin --title "fluidsynth.ygplugin (build ${{ github.run_number }})" --notes "Сборка из коммита ${{ github.sha }}"
