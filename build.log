@@ -1,0 +1,633 @@
+-- The C compiler identification is Clang 21.0.0
+-- The CXX compiler identification is Clang 21.0.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/local/lib/android/sdk/ndk/30.0.16248370/toolchains/llvm/prebuilt/linux-x86_64/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/local/lib/android/sdk/ndk/30.0.16248370/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Checking whether system has ANSI C header files
+-- Looking for 8 include files dlfcn.h, ..., float.h
+-- Looking for 8 include files dlfcn.h, ..., float.h - found
+-- Performing Test memchrExists
+-- Performing Test memchrExists - Success
+-- Performing Test freeExists
+-- Performing Test freeExists - Success
+-- ANSI C header files - found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for DIR in sys/stat.h;sys/types.h;dirent.h
+-- Looking for DIR in sys/stat.h;sys/types.h;dirent.h - found
+-- Looking for stdio.h
+-- Looking for stdio.h - found
+-- Looking for math.h
+-- Looking for math.h - found
+-- Looking for errno.h
+-- Looking for errno.h - found
+-- Looking for stdarg.h
+-- Looking for stdarg.h - found
+-- Looking for sys/mman.h
+-- Looking for sys/mman.h - found
+-- Looking for sys/time.h
+-- Looking for sys/time.h - found
+-- Looking for fcntl.h
+-- Looking for fcntl.h - found
+-- Looking for sys/socket.h
+-- Looking for sys/socket.h - found
+-- Looking for netinet/in.h
+-- Looking for netinet/in.h - found
+-- Looking for netinet/tcp.h
+-- Looking for netinet/tcp.h - found
+-- Looking for arpa/inet.h
+-- Looking for arpa/inet.h - found
+-- Looking for limits.h
+-- Looking for limits.h - found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for signal.h
+-- Looking for signal.h - found
+-- Looking for getopt.h
+-- Looking for getopt.h - found
+-- Check size of long long
+-- Check size of long long - done
+-- Performing Test _have_inline
+-- Performing Test _have_inline - Success
+-- Performing Test _have_vla
+-- Performing Test _have_vla - Success
+-- Performing Test HAVE_INCOMPATIBLE_POINTER_TYPES
+-- Performing Test HAVE_INCOMPATIBLE_POINTER_TYPES - Success
+-- Found GCEM: /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/gcem/include
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE
+-- Performing Test HAVE_CXX_THREAD_PRIMITIVES
+-- Performing Test HAVE_CXX_THREAD_PRIMITIVES - Success
+-- Performing Test HAVE_CXX_FILESYSTEM
+-- Performing Test HAVE_CXX_FILESYSTEM - Success
+-- Found OpenMP_C: -fopenmp=libomp (found version "5.1")
+-- Found OpenMP: TRUE (found version "5.1") found components: C
+-- Looking for sinf
+-- Looking for sinf - found
+-- Looking for cosf
+-- Looking for cosf - found
+-- Looking for fabsf
+-- Looking for fabsf - found
+-- Looking for powf
+-- Looking for powf - found
+-- Looking for sqrtf
+-- Looking for sqrtf - found
+-- Looking for logf
+-- Looking for logf - found
+-- Looking for inet_ntop
+-- Looking for inet_ntop - found
+-- Check size of socklen_t
+-- Check size of socklen_t - done
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Current revision (Git) is 1dacd7d
+-- 
+Audio / MIDI driver support:
+  ALSA:                  no
+  CoreAudio:             no
+  CoreMIDI:              no
+  DSound:                no
+  JACK:                  no
+  MidiShare:             no
+  Oboe:                  no
+  OpenSLES:              no
+  OS/2 DART:             no
+  OS/2 KAI:              no
+  OSS:                   no
+  PipeWire:              no
+  PortAudio:             no
+  PulseAudio:            no
+  SDL3:                  no
+  WASAPI:                no
+  WaveOut:               no
+  WinMidi:               no
+
+Support for SF3 files:   no (libsndfile not found)
+Support for DLS files:   yes
+
+Audio to file rendering: no
+  libsndfile:            no (RAW PCM rendering only)
+
+Miscellaneous support:
+  Limiter:               yes
+  D-Bus:                 no
+  LADSPA support:        no
+  NETWORK Support:       no
+    IPV6 Support:        yes
+  Readline:              no
+  systemd:               no
+  getopt:                yes
+
+Developer nerds info:
+  OS abstraction:        cpp11
+  Samples type:          double
+  Multithread rendering: yes
+  OpenMP 4.0:            no
+  Profiling:             no
+  Debug Build:           no
+  Trap on FPE (debug):   no
+  Check FPE (debug):     no
+  UBSan (debug):         no
+  Coverage:              no
+
+-- 
+**************************************************************
+Build Summary:
+FluidSynth Version:    2.6.1
+Library version:       3.6.1
+Git revision:          1dacd7d
+Build type:            Release
+Install Prefix:        /usr/local
+
+Audio / MIDI driver support:
+  ALSA:                  no
+  CoreAudio:             no
+  CoreMIDI:              no
+  DSound:                no
+  JACK:                  no
+  MidiShare:             no
+  Oboe:                  no
+  OpenSLES:              no
+  OS/2 DART:             no
+  OS/2 KAI:              no
+  OSS:                   no
+  PipeWire:              no
+  PortAudio:             no
+  PulseAudio:            no
+  SDL3:                  no
+  WASAPI:                no
+  WaveOut:               no
+  WinMidi:               no
+
+Support for SF3 files:   no (libsndfile not found)
+Support for DLS files:   yes
+
+Audio to file rendering: no
+  libsndfile:            no (RAW PCM rendering only)
+
+Miscellaneous support:
+  Limiter:               yes
+  D-Bus:                 no
+  LADSPA support:        no
+  NETWORK Support:       no
+    IPV6 Support:        yes
+  Readline:              no
+  systemd:               no
+  getopt:                yes
+
+Developer nerds info:
+  OS abstraction:        cpp11
+  Samples type:          double
+  Multithread rendering: yes
+  OpenMP 4.0:            no
+  Profiling:             no
+  Debug Build:           no
+  Trap on FPE (debug):   no
+  Check FPE (debug):     no
+  UBSan (debug):         no
+  Coverage:              no
+
+**************************************************************
+
+
+-- Configuring done (26.5s)
+-- Generating done (0.3s)
+-- Build files have been written to: /home/runner/work/yg-fluidsynth/yg-fluidsynth/out/build-arm64-v8a
+[1/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_ct2hz.cpp.o
+[2/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_file.cpp.o
+[3/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_sys_cpp11.cpp.o
+[4/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_cb2amp.cpp.o
+[5/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_concave.cpp.o
+[6/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_convex.cpp.o
+[7/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_interp_coeff.cpp.o
+[8/64] Building CXX object fluidsynth/src/CMakeFiles/fluid_limiter_impl-OBJ.dir/rvoice/fluid_limiter_impl.cpp.o
+In file included from /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/rvoice/fluid_limiter_impl.cpp:33:
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/signalsmith-audio-basics/include/signalsmith-basics/limiter.h:22:1: warning: 'LimiterSTFX' defined as a struct template here but previously declared as a class template; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   22 | struct LimiterSTFX : public BaseEffect {
+      | ^
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/signalsmith-audio-basics/include/signalsmith-basics/limiter.h:16:1: note: did you mean struct here?
+   16 | class LimiterSTFX;
+      | ^~~~~
+      | struct
+1 warning generated.
+[9/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_interp_coeff_linear.cpp.o
+[10/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_conv.c.o
+[11/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_pan.cpp.o
+[12/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_ringbuffer.c.o
+[13/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_list.c.o
+[14/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_hash.c.o
+[15/64] Building CXX object fluidsynth/src/CMakeFiles/fluid_limiter_impl-OBJ.dir/rvoice/fluid_rev_signalsmith.cpp.o
+In file included from /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/rvoice/fluid_rev_signalsmith.cpp:27:
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/signalsmith-audio-basics/include/signalsmith-basics/reverb.h:185:21: warning: comparison of integers of different signs: 'int' and 'const size_t' (aka 'const unsigned long') [-Wsign-compare]
+  185 |                 for (int i = 0; i < block.length; ++i) {
+      |                                 ~ ^ ~~~~~~~~~~~~
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/signalsmith-audio-basics/include/signalsmith-basics/../stfx/stfx-library.h:658:27: note: in instantiation of function template specialization 'signalsmith::basics::ReverbSTFX<stfx::LibraryEffectBase<double>>::processSTFX<Io, const stfx::LibraryConfig, const stfx::(anonymous namespace)::Block>' requested here
+  658 |                         ((EffectClass *)this)->processSTFX(io, (const Config &)config, (const Block &)block);
+      |                                                ^
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/rvoice/fluid_rev_signalsmith.cpp:209:21: note: in instantiation of function template specialization 'stfx::LibraryEffect<double, signalsmith::basics::ReverbSTFX>::process<double *(&)[2], double *(&)[2]>' requested here
+  209 |     d->reverb_impl->process(inputs, outputs, FLUID_BUFSIZE);
+      |                     ^
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/rvoice/fluid_rev_signalsmith.cpp:177:5: note: in instantiation of function template specialization 'fluid_revmodel_signalsmith::process<true>' requested here
+  177 |     process<true>(in, left_out, right_out);
+      |     ^
+1 warning generated.
+[16/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_sfont.c.o
+[17/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_sys.c.o
+[18/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_settings.c.o
+[19/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_samplecache.c.o
+[20/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_adsr_env.c.o
+[21/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_defsfont.c.o
+[22/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_chorus.c.o
+[23/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_iir_filter.c.o
+[24/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_lfo.c.o
+[25/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_sffile.c.o
+[26/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_event.c.o
+[27/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice.c.o
+[28/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_iir_filter_impl.cpp.o
+[29/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_dls.cpp.o
+[30/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_mixer.c.o
+[31/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_interp_coeff_sinc7.cpp.o
+[32/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev.cpp.o
+[33/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev_fdn.cpp.o
+[34/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_event.c.o
+[35/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_chan.c.o
+[36/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_gen.c.o
+[37/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_mod.c.o
+[38/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_synth_monopoly.c.o
+[39/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev_freeverb.cpp.o
+[40/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev_lexverb.cpp.o
+[41/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_tuning.c.o
+[42/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_voice.c.o
+[43/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_midi.c.o
+[44/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev_dattorro.cpp.o
+[45/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seqbind.c.o
+[46/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_dsp.cpp.o
+[47/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seq.c.o
+[48/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_midi_router.c.o
+[49/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_synth.c.o
+[50/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/drivers/fluid_adriver.c.o
+[51/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_synth_write_int.cpp.o
+In file included from /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/synth/fluid_synth_write_int.cpp:34:
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/drivers/fluid_audio_convert.h:62:18: warning: implicit conversion from 'type' (aka 'int') to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]
+   62 |     float fmax = std::numeric_limits<T>::max();
+      |           ~~~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/synth/fluid_synth_write_int.cpp:106:22: note: in instantiation of function template specialization 'round_clip_to<int>' requested here
+  106 |         sample_t s = round_clip_to<sample_t>(x * 2147483646.0f);
+      |                      ^
+1 warning generated.
+[52/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/drivers/fluid_mdriver.c.o
+[53/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_ladspa.c.o
+[54/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_filerenderer.c.o
+[55/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_limiter.c.o
+[56/64] Building CXX object CMakeFiles/yg_fluidsynth.dir/src/renderer.cpp.o
+[57/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seqbind_notes.cpp.o
+[58/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/drivers/fluid_audio_convert.cpp.o
+In file included from /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/drivers/fluid_audio_convert.cpp:38:
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/drivers/fluid_audio_convert.h:62:18: warning: implicit conversion from 'type' (aka 'int') to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]
+   62 |     float fmax = std::numeric_limits<T>::max();
+      |           ~~~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/drivers/fluid_audio_convert.cpp:187:25: note: in instantiation of function template specialization 'round_clip_to<int>' requested here
+  187 |             int32_t s = round_clip_to<int32_t>(src_planar[ch][f] * 2147483646.0f);
+      |                         ^
+1 warning generated.
+[59/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_cmd.c.o
+[60/64] Building C object CMakeFiles/yg_fluidsynth.dir/src/default_sf2.c.o
+[61/64] Building CXX object CMakeFiles/yg_fluidsynth.dir/src/plugin.cpp.o
+[62/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seq_queue.cpp.o
+[63/64] Linking CXX static library fluidsynth/src/libfluidsynth.a
+[64/64] Linking CXX shared library libyg_fluidsynth.so
+-- The C compiler identification is Clang 21.0.0
+-- The CXX compiler identification is Clang 21.0.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/local/lib/android/sdk/ndk/30.0.16248370/toolchains/llvm/prebuilt/linux-x86_64/bin/clang - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/local/lib/android/sdk/ndk/30.0.16248370/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Checking whether system has ANSI C header files
+-- Looking for 8 include files dlfcn.h, ..., float.h
+-- Looking for 8 include files dlfcn.h, ..., float.h - found
+-- Performing Test memchrExists
+-- Performing Test memchrExists - Success
+-- Performing Test freeExists
+-- Performing Test freeExists - Success
+-- ANSI C header files - found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for DIR in sys/stat.h;sys/types.h;dirent.h
+-- Looking for DIR in sys/stat.h;sys/types.h;dirent.h - found
+-- Looking for stdio.h
+-- Looking for stdio.h - found
+-- Looking for math.h
+-- Looking for math.h - found
+-- Looking for errno.h
+-- Looking for errno.h - found
+-- Looking for stdarg.h
+-- Looking for stdarg.h - found
+-- Looking for sys/mman.h
+-- Looking for sys/mman.h - found
+-- Looking for sys/time.h
+-- Looking for sys/time.h - found
+-- Looking for fcntl.h
+-- Looking for fcntl.h - found
+-- Looking for sys/socket.h
+-- Looking for sys/socket.h - found
+-- Looking for netinet/in.h
+-- Looking for netinet/in.h - found
+-- Looking for netinet/tcp.h
+-- Looking for netinet/tcp.h - found
+-- Looking for arpa/inet.h
+-- Looking for arpa/inet.h - found
+-- Looking for limits.h
+-- Looking for limits.h - found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for signal.h
+-- Looking for signal.h - found
+-- Looking for getopt.h
+-- Looking for getopt.h - found
+-- Check size of long long
+-- Check size of long long - done
+-- Performing Test _have_inline
+-- Performing Test _have_inline - Success
+-- Performing Test _have_vla
+-- Performing Test _have_vla - Success
+-- Performing Test HAVE_INCOMPATIBLE_POINTER_TYPES
+-- Performing Test HAVE_INCOMPATIBLE_POINTER_TYPES - Success
+-- Found GCEM: /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/gcem/include
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - not found
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE
+-- Performing Test HAVE_CXX_THREAD_PRIMITIVES
+-- Performing Test HAVE_CXX_THREAD_PRIMITIVES - Success
+-- Performing Test HAVE_CXX_FILESYSTEM
+-- Performing Test HAVE_CXX_FILESYSTEM - Success
+-- Found OpenMP_C: -fopenmp=libomp (found version "5.1")
+-- Found OpenMP: TRUE (found version "5.1") found components: C
+-- Looking for sinf
+-- Looking for sinf - found
+-- Looking for cosf
+-- Looking for cosf - found
+-- Looking for fabsf
+-- Looking for fabsf - found
+-- Looking for powf
+-- Looking for powf - found
+-- Looking for sqrtf
+-- Looking for sqrtf - found
+-- Looking for logf
+-- Looking for logf - found
+-- Looking for inet_ntop
+-- Looking for inet_ntop - found
+-- Check size of socklen_t
+-- Check size of socklen_t - done
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- Current revision (Git) is 1dacd7d
+-- 
+Audio / MIDI driver support:
+  ALSA:                  no
+  CoreAudio:             no
+  CoreMIDI:              no
+  DSound:                no
+  JACK:                  no
+  MidiShare:             no
+  Oboe:                  no
+  OpenSLES:              no
+  OS/2 DART:             no
+  OS/2 KAI:              no
+  OSS:                   no
+  PipeWire:              no
+  PortAudio:             no
+  PulseAudio:            no
+  SDL3:                  no
+  WASAPI:                no
+  WaveOut:               no
+  WinMidi:               no
+
+Support for SF3 files:   no (libsndfile not found)
+Support for DLS files:   yes
+
+Audio to file rendering: no
+  libsndfile:            no (RAW PCM rendering only)
+
+Miscellaneous support:
+  Limiter:               yes
+  D-Bus:                 no
+  LADSPA support:        no
+  NETWORK Support:       no
+    IPV6 Support:        yes
+  Readline:              no
+  systemd:               no
+  getopt:                yes
+
+Developer nerds info:
+  OS abstraction:        cpp11
+  Samples type:          double
+  Multithread rendering: yes
+  OpenMP 4.0:            no
+  Profiling:             no
+  Debug Build:           no
+  Trap on FPE (debug):   no
+  Check FPE (debug):     no
+  UBSan (debug):         no
+  Coverage:              no
+
+-- 
+**************************************************************
+Build Summary:
+FluidSynth Version:    2.6.1
+Library version:       3.6.1
+Git revision:          1dacd7d
+Build type:            Release
+Install Prefix:        /usr/local
+
+Audio / MIDI driver support:
+  ALSA:                  no
+  CoreAudio:             no
+  CoreMIDI:              no
+  DSound:                no
+  JACK:                  no
+  MidiShare:             no
+  Oboe:                  no
+  OpenSLES:              no
+  OS/2 DART:             no
+  OS/2 KAI:              no
+  OSS:                   no
+  PipeWire:              no
+  PortAudio:             no
+  PulseAudio:            no
+  SDL3:                  no
+  WASAPI:                no
+  WaveOut:               no
+  WinMidi:               no
+
+Support for SF3 files:   no (libsndfile not found)
+Support for DLS files:   yes
+
+Audio to file rendering: no
+  libsndfile:            no (RAW PCM rendering only)
+
+Miscellaneous support:
+  Limiter:               yes
+  D-Bus:                 no
+  LADSPA support:        no
+  NETWORK Support:       no
+    IPV6 Support:        yes
+  Readline:              no
+  systemd:               no
+  getopt:                yes
+
+Developer nerds info:
+  OS abstraction:        cpp11
+  Samples type:          double
+  Multithread rendering: yes
+  OpenMP 4.0:            no
+  Profiling:             no
+  Debug Build:           no
+  Trap on FPE (debug):   no
+  Check FPE (debug):     no
+  UBSan (debug):         no
+  Coverage:              no
+
+**************************************************************
+
+
+-- Configuring done (8.3s)
+-- Generating done (0.4s)
+-- Build files have been written to: /home/runner/work/yg-fluidsynth/yg-fluidsynth/out/build-armeabi-v7a
+[1/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_file.cpp.o
+[2/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_ct2hz.cpp.o
+[3/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_concave.cpp.o
+[4/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_convex.cpp.o
+[5/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_sys_cpp11.cpp.o
+[6/64] Building CXX object fluidsynth/src/CMakeFiles/fluid_limiter_impl-OBJ.dir/rvoice/fluid_rev_signalsmith.cpp.o
+In file included from /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/rvoice/fluid_rev_signalsmith.cpp:27:
+In file included from /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/signalsmith-audio-basics/include/signalsmith-basics/reverb.h:10:
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/signalsmith-audio-basics/include/signalsmith-basics/../stfx/stfx-library.h:627:18: warning: unused variable 'scoped' [-Wunused-variable]
+  627 |                         StopDenormals scoped;
+      |                                       ^~~~~~
+In file included from /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/rvoice/fluid_rev_signalsmith.cpp:27:
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/signalsmith-audio-basics/include/signalsmith-basics/reverb.h:185:21: warning: comparison of integers of different signs: 'int' and 'const size_t' (aka 'const unsigned int') [-Wsign-compare]
+  185 |                 for (int i = 0; i < block.length; ++i) {
+      |                                 ~ ^ ~~~~~~~~~~~~
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/signalsmith-audio-basics/include/signalsmith-basics/../stfx/stfx-library.h:658:27: note: in instantiation of function template specialization 'signalsmith::basics::ReverbSTFX<stfx::LibraryEffectBase<double>>::processSTFX<Io, const stfx::LibraryConfig, const stfx::(anonymous namespace)::Block>' requested here
+  658 |                         ((EffectClass *)this)->processSTFX(io, (const Config &)config, (const Block &)block);
+      |                                                ^
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/rvoice/fluid_rev_signalsmith.cpp:209:21: note: in instantiation of function template specialization 'stfx::LibraryEffect<double, signalsmith::basics::ReverbSTFX>::process<double *(&)[2], double *(&)[2]>' requested here
+  209 |     d->reverb_impl->process(inputs, outputs, FLUID_BUFSIZE);
+      |                     ^
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/rvoice/fluid_rev_signalsmith.cpp:177:5: note: in instantiation of function template specialization 'fluid_revmodel_signalsmith::process<true>' requested here
+  177 |     process<true>(in, left_out, right_out);
+      |     ^
+2 warnings generated.
+[7/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_interp_coeff_linear.cpp.o
+[8/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_interp_coeff.cpp.o
+[9/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_conv.c.o
+[10/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_cb2amp.cpp.o
+[11/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_hash.c.o
+[12/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_list.c.o
+[13/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_ringbuffer.c.o
+[14/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_pan.cpp.o
+[15/64] Building CXX object fluidsynth/src/CMakeFiles/fluid_limiter_impl-OBJ.dir/rvoice/fluid_limiter_impl.cpp.o
+In file included from /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/rvoice/fluid_limiter_impl.cpp:33:
+In file included from /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/signalsmith-audio-basics/include/signalsmith-basics/limiter.h:9:
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/signalsmith-audio-basics/include/signalsmith-basics/../stfx/stfx-library.h:627:18: warning: unused variable 'scoped' [-Wunused-variable]
+  627 |                         StopDenormals scoped;
+      |                                       ^~~~~~
+In file included from /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/rvoice/fluid_limiter_impl.cpp:33:
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/signalsmith-audio-basics/include/signalsmith-basics/limiter.h:22:1: warning: 'LimiterSTFX' defined as a struct template here but previously declared as a class template; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   22 | struct LimiterSTFX : public BaseEffect {
+      | ^
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/signalsmith-audio-basics/include/signalsmith-basics/limiter.h:16:1: note: did you mean struct here?
+   16 | class LimiterSTFX;
+      | ^~~~~
+      | struct
+2 warnings generated.
+[16/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_sys.c.o
+[17/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_sfont.c.o
+[18/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_samplecache.c.o
+[19/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_defsfont.c.o
+[20/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_adsr_env.c.o
+[21/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_settings.c.o
+[22/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_sffile.c.o
+[23/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_chorus.c.o
+[24/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_iir_filter.c.o
+[25/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_lfo.c.o
+[26/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice.c.o
+[27/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_event.c.o
+[28/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_iir_filter_impl.cpp.o
+[29/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_mixer.c.o
+[30/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_dls.cpp.o
+[31/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev.cpp.o
+[32/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/gentables/fluid_interp_coeff_sinc7.cpp.o
+[33/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_chan.c.o
+[34/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_event.c.o
+[35/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev_fdn.cpp.o
+[36/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_gen.c.o
+[37/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev_dattorro.cpp.o
+[38/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_mod.c.o
+[39/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev_freeverb.cpp.o
+[40/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_synth_monopoly.c.o
+[41/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev_lexverb.cpp.o
+[42/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_tuning.c.o
+[43/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_midi_router.c.o
+[44/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_voice.c.o
+[45/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_midi.c.o
+[46/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seqbind.c.o
+[47/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_synth_write_int.cpp.o
+In file included from /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/synth/fluid_synth_write_int.cpp:34:
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/drivers/fluid_audio_convert.h:62:18: warning: implicit conversion from 'type' (aka 'int') to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]
+   62 |     float fmax = std::numeric_limits<T>::max();
+      |           ~~~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/synth/fluid_synth_write_int.cpp:106:22: note: in instantiation of function template specialization 'round_clip_to<int>' requested here
+  106 |         sample_t s = round_clip_to<sample_t>(x * 2147483646.0f);
+      |                      ^
+1 warning generated.
+[48/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seq.c.o
+[49/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/drivers/fluid_adriver.c.o
+[50/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/drivers/fluid_mdriver.c.o
+[51/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_dsp.cpp.o
+[52/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_filerenderer.c.o
+[53/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_ladspa.c.o
+[54/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_limiter.c.o
+[55/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_synth.c.o
+[56/64] Building C object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_cmd.c.o
+[57/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/drivers/fluid_audio_convert.cpp.o
+In file included from /home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/drivers/fluid_audio_convert.cpp:38:
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/drivers/fluid_audio_convert.h:62:18: warning: implicit conversion from 'type' (aka 'int') to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]
+   62 |     float fmax = std::numeric_limits<T>::max();
+      |           ~~~~   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/runner/work/yg-fluidsynth/yg-fluidsynth/third_party/fluidsynth/src/drivers/fluid_audio_convert.cpp:187:25: note: in instantiation of function template specialization 'round_clip_to<int>' requested here
+  187 |             int32_t s = round_clip_to<int32_t>(src_planar[ch][f] * 2147483646.0f);
+      |                         ^
+1 warning generated.
+[58/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seqbind_notes.cpp.o
+[59/64] Building CXX object CMakeFiles/yg_fluidsynth.dir/src/renderer.cpp.o
+[60/64] Building CXX object fluidsynth/src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seq_queue.cpp.o
+[61/64] Building C object CMakeFiles/yg_fluidsynth.dir/src/default_sf2.c.o
+[62/64] Linking CXX static library fluidsynth/src/libfluidsynth.a
+[63/64] Building CXX object CMakeFiles/yg_fluidsynth.dir/src/plugin.cpp.o
+[64/64] Linking CXX shared library libyg_fluidsynth.so
+Готово: out/fluidsynth.ygplugin
