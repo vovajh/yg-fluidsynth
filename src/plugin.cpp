@@ -775,7 +775,20 @@ bool loadMessage(long long chat, long long id, Media& m, char* err, size_t ecap,
     }
     bool ok = extractMedia(r, m, dbg, dcap);
     if (!ok) {
-        snprintf(err, ecap, "в сообщении не нашёл файл. Ответ get_message (пришли мне этот текст):\n%.1150s", r);
+        char* ai = hcall("get_app_info", "{}");
+        char* methods = ai ? valueCopy(ai, "methods") : nullptr;
+        if (strstr(r, "\"_type\":\"LocalFile\"")) {
+            // TDLib: файл есть на сервере, но на телефон не скачан (local path пустой)
+            snprintf(err, ecap,
+                     "⬇ Файл ещё не скачан на телефон: Yougram пока хранит только ссылку на сервер.\n"
+                     "Нажми на файл в чате, дождись загрузки и повтори команду.\n\n[диагностика] методы хоста: %.700s",
+                     methods ? methods : "?");
+        } else {
+            snprintf(err, ecap, "в сообщении не нашёл файл. Ответ get_message (пришли мне этот текст):\n%.900s\n\nметоды хоста: %.400s", r,
+                     methods ? methods : "?");
+        }
+        free(methods);
+        yg_free(g_host, ai);
     }
     yg_free(g_host, r);
     return ok;

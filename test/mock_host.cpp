@@ -100,6 +100,8 @@ static char* hostCall(void*, const char* method, const char* args) {
                 for (char c : g_midi) { if (c == '/') esc += "\\/"; else esc += c; }
                 return dup("{\"ok\":true,\"result\":{\"id\":6,\"chat_id\":100,\"type\":\"document\",\"attachment\":{\"name\":\"odd.mid\",\"uri\":\"" + esc + "\"}}}");
             }
+            case 8:  // TDLib-обфусцированный ответ: файл не скачан (LocalFile.path пустой)
+                return dup("{\"ok\":true,\"result\":{\"N\":{\"a\":{\"a\":\"x.mid\",\"b\":\"audio\\/midi\",\"e\":{\"a\":1,\"d\":{\"a\":\"\",\"b\":true,\"_type\":\"LocalFile\"},\"_type\":\"File\"},\"_type\":\"Document\"}}}}");
             case 7:  // совсем без вложения
                 return dup("{\"ok\":true,\"result\":{\"id\":7,\"chat_id\":100,\"type\":\"text\",\"text\":\"hi\"}}");
             default: return dup("{\"ok\":false,\"error\":\"not found\"}");
@@ -119,6 +121,7 @@ static char* hostCall(void*, const char* method, const char* args) {
         printf("  [host] %s %s\n", method, args);
         return dup("{\"ok\":true}");
     }
+    if (m == "get_app_info") return dup("{\"ok\":true,\"result\":{\"api\":\"2.1\",\"methods\":[\"get_message\",\"send_message\"]}}");
     return dup("{\"ok\":true}");
 }
 static void hostFree(char* s) { free(s); }
@@ -171,7 +174,8 @@ int main(int argc, char** argv) {
     cmd("info", 1);
     cmd("info", 4);
     cmd("render", 6);                 pump(60);   // вложение под нестандартным ключом
-    cmd("render", 7);                              // нет вложения: должен прийти сырой JSON
+    cmd("render", 7);
+    cmd("render", 8);                              // нет вложения: должен прийти сырой JSON
     cmd("render", 1);                 pump(60);
     cmd("render -b 24 -r 48000 -g 0.8 --no-chorus -m", 1); pump(60);
     cmd("render -b 32", 1);           pump(60);
